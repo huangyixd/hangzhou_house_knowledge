@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>寒假直播提分班</title>
+<script type="text/javascript">document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px';</script>
+
+<link rel="stylesheet" href="css/promotion.min.css?t=23432234234">
+
+
+</head>
+<body>
+
+<div class="banner-wrap"><div class="pro-banner"></div></div>
+<div class="content-wrap">
+    <ul class="pro-content">
+        <li class="body-first body-first1">
+            <div class="body-body">
+                <div class="body-img" data-id="1" data-type="6"></div>
+                <div class="body-text"> 
+                    <ul id="text-btn" class="text-btn">
+                        <li class="on">老师介绍<i></i></li>
+                        <li class="">课程介绍<i></i></li>
+                    </ul>  
+                    <ul class="text-text">
+                        <li class="on">全国高中物理竞赛金牌教练，央视报道高考物理现象级名师，曾教授状元三名，高中物理竞赛省二等奖两名，2017年暑假直播累计学生人数超过10万人，EWT最受欢迎的物理老师之一。</li>
+                        <li>1、带电粒子在磁场中的运动一般性解决方案及临界问题；<br> 
+                            2、电磁感应中的图像问题及动生感生问题； <br> 
+                            3、光电效应、原子能级； <br> 
+                            4、动量及碰撞问题； <br> 
+                            5、交变电流；</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body-btn" data-id="2" data-type="6">马上提升</div>
+        </li>
+        <li class="body-first body-first2">
+            <div class="body-body">
+                <div class="body-img1" data-id="3" data-type="6"></div>
+                <div class="body-text">
+                    <ul id="text-btn1" class="text-btn">
+                        <li class="on">老师介绍
+                            <i></i>
+                        </li>
+                        <li class="">课程介绍
+                            <i></i>
+                        </li>
+                    </ul>
+                    <ul class="text-text">
+                        <li class="on">原新东方在线高考英语首席讲师。腾讯教育、新浪教育、搜狐教育、学科网高考命题分析文章撰稿人。“北京新东方学校优秀讲师”，“腾讯精品课全国十大最受欢迎老师”，陕西卫视《超级老师》节目“金牌超级老师”。</li>
+                        <li>1、高中英语140分超精读突破法之：玩转单词 <br>
+                            2、高中英语140分超精读突破法之：破解句子 <br>
+                            3、高中英语140分超精读突破法之：秒懂段落 <br>
+                            4、高中英语140分超精读突破法之：洞穿文章 <br>
+                            5、高中英语140分超精读突破法之：透析语感</li>
+                    </ul>
+                </div>
+            </div>
+        <div class="body-btn body-btn1" data-id="4" data-type="6">马上提升
+        </div>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="../ewtCom.js"></script>
+<script type="text/javascript" src='js/Bridge.js?t=123112'></script>
+<script type="text/javascript" src='js/jquery.min.js'></script>
+<script type="text/javascript">
+    var tk = window.location.search.substr(1).split("=")[1];//token
+    var huodong_url = ewtCom;
+    var activity_id = 8; //活动ID
+    var arr = tk.split('-');
+    var User = {
+        IsLogin: true,
+        UserID: arr[0]
+    }
+    var url = huodong_url + '/stat/index/device/h5/theme/' + activity_id + '/id/0/type/-1/tk/' + tk;
+    $.get(url, function (result) { });
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "tongji.ewt360.com/api/getjs?15' type='text/javascript'%3E%3C/script%3E"));
+    
+    var globalJsBridge;
+    setupWebViewJavascriptBridge(function (bridge) {
+        initBaseHandler(bridge);
+        injectHandler('nativeHandler', bridge, function (data, handleName, responseCallback) {
+            var responseData = { 'Javascript Says': 'Right back atcha!' }
+            log('JS responding with', responseData)
+            responseCallback(responseData)
+        });
+        globalJsBridge = bridge;
+    });
+
+    function executeCommand(url) {
+        sendMessage(globalJsBridge, url, function (response) {
+        });
+    }
+
+    $(".body-first1 .body-btn, .body-first1 .body-img").on("click", function () {
+        executeCommand("mistong://{\"domain\":\"live\", \"action\":\"open_series_detail\",\"params\":{\"id\":\"4\"}}")
+    })
+
+    $(".body-first2 .body-btn, .body-first2 .body-img1").on("click", function () {
+        executeCommand("mistong://{\"domain\":\"live\", \"action\":\"open_series_detail\",\"params\":{\"id\":\"6\"}}")
+    })
+
+
+    $("#text-btn").on("click","li",function(){
+         var _this = $(this);
+         var i = _this.index();
+         _this.addClass("on").siblings().removeClass("on");
+        _this.parent().next(".text-text").find("li").eq(i).addClass("on").siblings().removeClass("on");
+    })
+    $("#text-btn1").on("click", "li", function () {
+        var _this = $(this);
+        var i = _this.index();
+        _this.addClass("on").siblings().removeClass("on");
+        _this.parent().next(".text-text").find("li").eq(i).addClass("on").siblings().removeClass("on");
+    })
+</script>
+</body>
+</html>
